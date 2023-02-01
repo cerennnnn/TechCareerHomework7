@@ -9,12 +9,15 @@ import UIKit
 
 class HomeToDoVC: UIViewController {
 
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
     var toDoList = [ToDoModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,7 +36,12 @@ class HomeToDoVC: UIViewController {
             }
         }
     }
-    
+}
+
+extension HomeToDoVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Searching \(searchText)")
+    }
 }
 
 extension HomeToDoVC: UITableViewDelegate, UITableViewDataSource {

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EgS-mo-tSn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="IHX-w6-SXj" customClass="ToDoTableViewCell" customModule="ToDoVIPER" customModuleProvider="target">
@@ -59,14 +59,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search to do" translatesAutoresizingMaskIntoConstraints="NO" id="mRq-hQ-TON">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KcK-y8-34o"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EgS-mo-tSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Err-iw-bI0"/>
-                            <constraint firstItem="EgS-mo-tSn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IlB-F7-SlO"/>
-                            <constraint firstItem="EgS-mo-tSn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yff-9U-ndB"/>
-                            <constraint firstItem="EgS-mo-tSn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cnL-oy-Khq"/>
+                            <constraint firstItem="EgS-mo-tSn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9RM-MP-APU"/>
+                            <constraint firstItem="EgS-mo-tSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F4e-WQ-TBa"/>
+                            <constraint firstItem="mRq-hQ-TON" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HC6-aM-EoJ"/>
+                            <constraint firstItem="mRq-hQ-TON" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WCS-r1-Yz1"/>
+                            <constraint firstItem="EgS-mo-tSn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YA7-Wn-c6E"/>
+                            <constraint firstItem="EgS-mo-tSn" firstAttribute="top" secondItem="mRq-hQ-TON" secondAttribute="bottom" id="ilV-bg-u5q"/>
+                            <constraint firstItem="mRq-hQ-TON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l3w-pt-lZY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" id="abs-hS-gDK">
@@ -77,6 +87,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="mRq-hQ-TON" id="uuk-uj-zYD"/>
                         <outlet property="tableView" destination="EgS-mo-tSn" id="Th0-9t-YL3"/>
                         <segue destination="uYB-lo-UKX" kind="show" identifier="updateToDo" id="kIG-8p-Epu"/>
                     </connections>
