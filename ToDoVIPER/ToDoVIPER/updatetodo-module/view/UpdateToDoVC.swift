@@ -13,6 +13,7 @@ class UpdateToDoVC: UIViewController {
     @IBOutlet var toDoTextField: UITextField!
     
     var toDoItem: ToDoModel?
+    var updateToDoPresenterObject: ViewToPresenterUpdateToDoProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +22,15 @@ class UpdateToDoVC: UIViewController {
             toDoTextField.text = toDo.toDo
             categoryTextField.text = toDo.category
         }
+        
+        UpdateToDoRouter.createModule(ref: self)
     }
     
     @IBAction func updateButtonPressed(_ sender: UIButton) {
         if let item = toDoTextField.text, let category = categoryTextField.text, let toDo = toDoItem {
             if toDoItem?.toDoID != nil {
-                updateToDo(item: item, category: category, toDoID: toDo.toDoID!)
+                updateToDoPresenterObject?.updateToDoFunc(item: item, category: category, toDoID: toDo.toDoID!)
             }
         }
     }
-    
-    func updateToDo(item: String, category: String, toDoID: Int) {
-        print("Update to do: \(item) - \(category) - \(toDoID)")
-    }
-    
 }

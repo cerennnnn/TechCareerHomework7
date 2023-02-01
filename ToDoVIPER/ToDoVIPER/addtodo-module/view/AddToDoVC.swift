@@ -12,19 +12,18 @@ class AddToDoVC: UIViewController {
     @IBOutlet var toDoTextField: UITextField!
     @IBOutlet var categoryTextField: UITextField!
     
+    var addToDoPresenterObject: ViewToPresenterAddToDoProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AddToDoRouter.createModule(ref: self)
 
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         if let item = toDoTextField.text, let category = categoryTextField.text {
-            addToDo(item: item, category: category)
+            addToDoPresenterObject?.addToDoFunc(item: item, category: category)
         }
     }
-    
-    func addToDo(item: String, category: String) {
-        print("Add to do: \(item) - \(category)")
-    }
-    
 }
