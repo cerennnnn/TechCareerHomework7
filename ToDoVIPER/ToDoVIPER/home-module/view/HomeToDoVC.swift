@@ -13,6 +13,7 @@ class HomeToDoVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var toDoList = [ToDoModel]()
+    var homePagePresenterObject: ViewToPresenterHomePageProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,13 @@ class HomeToDoVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let i1 = ToDoModel(toDoID: 1, category: "education", toDo: "Study iOS for 2 hours.")
-        let i2 = ToDoModel(toDoID: 2, category: "grocery", toDo: "Buy some milk.")
+        HomePageRouter.createModule(ref: self)
         
-        toDoList = [i1, i2]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        homePagePresenterObject?.getAllToDosFunc() //will trigger presenter's func which triggers interactor
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,9 +42,16 @@ class HomeToDoVC: UIViewController {
     }
 }
 
+extension HomeToDoVC: PresenterToViewHomePageProtocol {
+    func sendDataToView(toDos: Array<ToDoModel>) {
+        self.toDoList = toDos
+        tableView.reloadData()
+    }
+}
+
 extension HomeToDoVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Searching \(searchText)")
+        homePagePresenterObject?.searchToDoFunc(searchText: searchText)
     }
 }
 
@@ -74,7 +85,7 @@ extension HomeToDoVC: UITableViewDelegate, UITableViewDataSource {
             let alert = UIAlertController(title: "Careful!", message: "Are you sure you want to delete your to do item?", preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
             let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { action in
-                print("\(item.toDoID!) deleted.")
+                self.homePagePresenterObject?.deleteToDoFunc(toDoID: item.toDoID!)
             }
             
             alert.addAction(cancelButton)
