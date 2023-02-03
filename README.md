@@ -1,4 +1,4 @@
- ✨ In my 7th homework for TM iOS Developer Bootcamp with Swift organized by techcareer.net, I made a to do list app.
+ ✨ In my 7th homework for TM iOS Developer Bootcamp with Swift organized by techcareer.net, I made a to do list app that can add an item to the list, delete existing item from the list, and update existing item from the list. These operations run concurrently with the database.
  
  ✨ For this project, I used:
 
