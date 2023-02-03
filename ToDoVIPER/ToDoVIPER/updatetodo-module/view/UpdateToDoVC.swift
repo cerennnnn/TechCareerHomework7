@@ -28,9 +28,9 @@ class UpdateToDoVC: UIViewController {
     
     @IBAction func updateButtonPressed(_ sender: UIButton) {
         if let item = toDoTextField.text, let category = categoryTextField.text, let toDo = toDoItem {
-            if toDoItem?.toDoID != nil {
+            
                 updateToDoPresenterObject?.updateToDoFunc(item: item, category: category, toDoID: toDo.toDoID!)
-            }
+            
         }
     }
 }

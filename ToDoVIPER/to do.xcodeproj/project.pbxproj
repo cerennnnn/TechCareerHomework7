@@ -19,6 +19,12 @@
 		333B7A2E298AF8B7005084F4 /* UpdateToDoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B7A2D298AF8B7005084F4 /* UpdateToDoRouter.swift */; };
 		333B7A30298AF8C9005084F4 /* UpdateToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B7A2F298AF8C9005084F4 /* UpdateToDoInteractor.swift */; };
 		333B7A32298AF8D8005084F4 /* UpdateToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B7A31298AF8D8005084F4 /* UpdateToDoPresenter.swift */; };
+		33B088AC298BF83F00813B61 /* toDos.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 33B088AB298BF83F00813B61 /* toDos.sqlite */; };
+		33B088BB298BF9FE00813B61 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B088B0298BF9FA00813B61 /* FMResultSet.m */; };
+		33B088BC298BF9FE00813B61 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B088B2298BF9FB00813B61 /* FMDatabase.m */; };
+		33B088BD298BF9FE00813B61 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B088B6298BF9FC00813B61 /* FMDatabaseQueue.m */; };
+		33B088BE298BF9FE00813B61 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B088B7298BF9FD00813B61 /* FMDatabasePool.m */; };
+		33B088BF298BF9FE00813B61 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B088B8298BF9FD00813B61 /* FMDatabaseAdditions.m */; };
 		33D91661298AB4C800778369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D91660298AB4C800778369 /* AppDelegate.swift */; };
 		33D91663298AB4C800778369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D91662298AB4C800778369 /* SceneDelegate.swift */; };
 		33D91665298AB4C800778369 /* HomeToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D91664298AB4C800778369 /* HomeToDoVC.swift */; };
@@ -45,6 +51,20 @@
 		333B7A2D298AF8B7005084F4 /* UpdateToDoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoRouter.swift; sourceTree = "<group>"; };
 		333B7A2F298AF8C9005084F4 /* UpdateToDoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoInteractor.swift; sourceTree = "<group>"; };
 		333B7A31298AF8D8005084F4 /* UpdateToDoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoPresenter.swift; sourceTree = "<group>"; };
+		33B088AB298BF83F00813B61 /* toDos.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = toDos.sqlite; path = ../../toDos.sqlite; sourceTree = "<group>"; };
+		33B088AE298BF88E00813B61 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		33B088AF298BF9F900813B61 /* ToDoVIPER-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoVIPER-Bridging-Header.h"; sourceTree = "<group>"; };
+		33B088B0298BF9FA00813B61 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		33B088B1298BF9FA00813B61 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		33B088B2298BF9FB00813B61 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		33B088B3298BF9FB00813B61 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		33B088B4298BF9FC00813B61 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		33B088B5298BF9FC00813B61 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		33B088B6298BF9FC00813B61 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		33B088B7298BF9FD00813B61 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		33B088B8298BF9FD00813B61 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		33B088B9298BF9FE00813B61 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		33B088BA298BF9FE00813B61 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		33D9165D298AB4C800778369 /* ToDoVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D91660298AB4C800778369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D91662298AB4C800778369 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,11 +171,20 @@
 			path = protocols;
 			sourceTree = "<group>";
 		};
+		33B088AD298BF88D00813B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33B088AE298BF88E00813B61 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33D91654298AB4C800778369 = {
 			isa = PBXGroup;
 			children = (
 				33D9165F298AB4C800778369 /* ToDoVIPER */,
 				33D9165E298AB4C800778369 /* Products */,
+				33B088AD298BF88D00813B61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,7 +210,20 @@
 				33D9166C298AB4CA00778369 /* Assets.xcassets */,
 				33D9166E298AB4CA00778369 /* LaunchScreen.storyboard */,
 				33D91671298AB4CA00778369 /* Info.plist */,
+				33B088AB298BF83F00813B61 /* toDos.sqlite */,
+				33B088B5298BF9FC00813B61 /* FMDatabase.h */,
+				33B088B2298BF9FB00813B61 /* FMDatabase.m */,
+				33B088B4298BF9FC00813B61 /* FMDatabaseAdditions.h */,
+				33B088B8298BF9FD00813B61 /* FMDatabaseAdditions.m */,
+				33B088B3298BF9FB00813B61 /* FMDatabasePool.h */,
+				33B088B7298BF9FD00813B61 /* FMDatabasePool.m */,
+				33B088B1298BF9FA00813B61 /* FMDatabaseQueue.h */,
+				33B088B6298BF9FC00813B61 /* FMDatabaseQueue.m */,
+				33B088B9298BF9FE00813B61 /* FMDB.h */,
+				33B088BA298BF9FE00813B61 /* FMResultSet.h */,
+				33B088B0298BF9FA00813B61 /* FMResultSet.m */,
 				33D91669298AB4C800778369 /* ToDoVIPER.xcdatamodeld */,
+				33B088AF298BF9F900813B61 /* ToDoVIPER-Bridging-Header.h */,
 			);
 			path = ToDoVIPER;
 			sourceTree = "<group>";
@@ -310,10 +352,11 @@
 				TargetAttributes = {
 					33D9165C298AB4C800778369 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
-			buildConfigurationList = 33D91658298AB4C800778369 /* Build configuration list for PBXProject "ToDoVIPER" */;
+			buildConfigurationList = 33D91658298AB4C800778369 /* Build configuration list for PBXProject "to do" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -337,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D91670298AB4CA00778369 /* LaunchScreen.storyboard in Resources */,
+				33B088AC298BF83F00813B61 /* toDos.sqlite in Resources */,
 				33D9166D298AB4CA00778369 /* Assets.xcassets in Resources */,
 				33D91668298AB4C800778369 /* Main.storyboard in Resources */,
 			);
@@ -353,12 +397,17 @@
 				333B7A32298AF8D8005084F4 /* UpdateToDoPresenter.swift in Sources */,
 				33D91665298AB4C800778369 /* HomeToDoVC.swift in Sources */,
 				333B7A1F298AF80D005084F4 /* AddToDoProtocols.swift in Sources */,
+				33B088BF298BF9FE00813B61 /* FMDatabaseAdditions.m in Sources */,
 				33D9167A298AC40B00778369 /* UpdateToDoVC.swift in Sources */,
 				333B7A21298AF820005084F4 /* AddToDoRouter.swift in Sources */,
 				33D9167E298AC4D400778369 /* ToDoTableViewCell.swift in Sources */,
 				33D91678298AC40100778369 /* AddToDoVC.swift in Sources */,
 				333B7A2E298AF8B7005084F4 /* UpdateToDoRouter.swift in Sources */,
+				33B088BC298BF9FE00813B61 /* FMDatabase.m in Sources */,
+				33B088BB298BF9FE00813B61 /* FMResultSet.m in Sources */,
 				333B7A30298AF8C9005084F4 /* UpdateToDoInteractor.swift in Sources */,
+				33B088BD298BF9FE00813B61 /* FMDatabaseQueue.m in Sources */,
+				33B088BE298BF9FE00813B61 /* FMDatabasePool.m in Sources */,
 				333B7A16298AF769005084F4 /* HomePageInteractor.swift in Sources */,
 				333B7A25298AF84D005084F4 /* AddToDoPresenter.swift in Sources */,
 				33D91661298AB4C800778369 /* AppDelegate.swift in Sources */,
@@ -513,10 +562,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoVIPER/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "to do list";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -530,6 +581,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToDoVIPER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoVIPER/ToDoVIPER-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -540,10 +593,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoVIPER/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "to do list";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -557,6 +612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToDoVIPER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoVIPER/ToDoVIPER-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,7 +621,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33D91658298AB4C800778369 /* Build configuration list for PBXProject "ToDoVIPER" */ = {
+		33D91658298AB4C800778369 /* Build configuration list for PBXProject "to do" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33D91672298AB4CA00778369 /* Debug */,

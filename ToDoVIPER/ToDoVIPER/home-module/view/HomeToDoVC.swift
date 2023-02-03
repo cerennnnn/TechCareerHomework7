@@ -23,6 +23,9 @@ class HomeToDoVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        //copy db when view first show up
+        copyDB()
+        
         HomePageRouter.createModule(ref: self)
         
     }
@@ -30,6 +33,23 @@ class HomeToDoVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         homePagePresenterObject?.getAllToDosFunc() //will trigger presenter's func which triggers interactor
         
+    }
+    
+    func copyDB() {
+        let path = Bundle.main.path(forResource: "toDos", ofType: ".sqlite")
+        let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let fileManager = FileManager.default
+        let copyTo = URL(fileURLWithPath: targetPath).appendingPathComponent("toDos.sqlite")
+        
+        if fileManager.fileExists(atPath: copyTo.path) {
+            print("DB already exists.")
+        } else {
+            do {
+                try fileManager.copyItem(atPath: path!, toPath: copyTo.path)
+            } catch {
+                
+            }
+        } 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

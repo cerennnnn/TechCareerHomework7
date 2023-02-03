@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,15 +32,15 @@
                                                     <rect key="frame" x="15" y="0.0" width="378" height="65"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64b-Ke-oPZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="45.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="44.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="categoryLabelFontColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="to do" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb4-sM-wvC">
-                                                            <rect key="frame" x="0.0" y="45.666666666666664" width="36.666666666666664" height="19.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="0.0" y="44.666666666666664" width="38.333333333333336" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                            <color key="textColor" name="fontColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -81,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" id="abs-hS-gDK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Szr-ke-QVx">
+                            <color key="tintColor" name="buttonBackgroundColor"/>
                             <connections>
                                 <segue destination="zDj-19-Rlk" kind="show" id="gjP-oU-RbR"/>
                             </connections>
@@ -105,25 +107,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new to do item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W45-Ij-GGQ">
-                                <rect key="frame" x="30" y="363.33333333333331" width="333" height="34"/>
+                                <rect key="frame" x="30" y="355" width="333" height="34"/>
+                                <color key="backgroundColor" name="textFieldBackgroundColor"/>
+                                <color key="tintColor" name="fontColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCP-y0-rlP">
-                                <rect key="frame" x="30" y="283.33333333333331" width="333" height="34"/>
+                                <rect key="frame" x="30" y="275" width="333" height="34"/>
+                                <color key="backgroundColor" name="textFieldBackgroundColor"/>
+                                <color key="tintColor" name="fontColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVg-79-hwI">
                                 <rect key="frame" x="136.66666666666666" y="678" width="119.99999999999997" height="40"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="buttonBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="9fs-q7-XbN"/>
                                     <constraint firstAttribute="height" constant="40" id="GbO-6M-Ky2"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" name="backgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
@@ -165,25 +171,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update to do item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZu-Pn-EWJ">
-                                <rect key="frame" x="30" y="363.33333333333331" width="333" height="34"/>
+                                <rect key="frame" x="30" y="355" width="333" height="34"/>
+                                <color key="backgroundColor" name="textFieldBackgroundColor"/>
+                                <color key="tintColor" name="fontColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ3-35-SUn">
-                                <rect key="frame" x="30" y="283.33333333333331" width="333" height="34"/>
+                                <rect key="frame" x="30" y="275" width="333" height="34"/>
+                                <color key="backgroundColor" name="textFieldBackgroundColor"/>
+                                <color key="tintColor" name="fontColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCc-nh-xQw">
                                 <rect key="frame" x="136.66666666666666" y="678" width="119.99999999999997" height="40"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="buttonBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lZf-Hs-09Y"/>
                                     <constraint firstAttribute="width" constant="120" id="xBB-Sb-TFz"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Update">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" name="buttonForegroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
@@ -222,8 +232,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OMN-aC-W24" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="zQF-6H-vis">
-                        <rect key="frame" x="0.0" y="59" width="393" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="textFieldBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -236,6 +249,24 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="backgroundColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonBackgroundColor">
+            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonForegroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="categoryLabelFontColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fontColor">
+            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textFieldBackgroundColor">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

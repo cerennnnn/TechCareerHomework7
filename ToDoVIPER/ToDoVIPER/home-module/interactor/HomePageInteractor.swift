@@ -10,25 +10,73 @@ import Foundation
 class HomePageInteractor: PresenterToInteractorHomePageProtocol {
     var homePagePresenter: InteractorToPresenterHomePageProtocol?
     
+    let db: FMDatabase?
+    
+    init() {
+        let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let dbURL = URL(fileURLWithPath: targetPath).appendingPathComponent("toDos.sqlite")
+        db = FMDatabase(path: dbURL.path)
+    }
+    
     func getAllToDos() {
         
         var toDoList = [ToDoModel]()
         
-        let i1 = ToDoModel(toDoID: 1, category: "education", toDo: "Study iOS for 2 hours.")
-        let i2 = ToDoModel(toDoID: 2, category: "grocery", toDo: "Buy some milk.")
+        db?.open()
         
-        toDoList = [i1, i2]
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM toDos", values: nil)
+            
+            while rs.next() {
+                let todo = ToDoModel(toDoID: Int(rs.string(forColumn: "id")), category: rs.string(forColumn: "category"), toDo: rs.string(forColumn: "todo"))
+                
+                toDoList.append(todo)
+            }
+            
+            //sends data to presenter layer
+            homePagePresenter?.sendDataToPresenter(toDos: toDoList)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
         
-        //sends data to presenter layer
-        homePagePresenter?.sendDataToPresenter(toDos: toDoList)
+        db?.close()
     }
     
     func searchToDo(searchText: String) {
-        print("Searching \(searchText)")
+        var toDoList = [ToDoModel]()
+        
+        db?.open()
+        
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM toDos WHERE todo like '%\(searchText)%'", values: nil)
+            
+            while rs.next() {
+                let todo = ToDoModel(toDoID: Int(rs.string(forColumn: "id")), category: rs.string(forColumn: "category"), toDo: rs.string(forColumn: "todo"))
+                
+                toDoList.append(todo)
+            }
+            
+            homePagePresenter?.sendDataToPresenter(toDos: toDoList)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     func deleteToDo(toDoID: Int) {
-        print("\(toDoID) deleted.")
+        db?.open()
+        
+        do {
+            try db!.executeUpdate("DELETE from toDos WHERE id = ?", values: [toDoID])
+            getAllToDos()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     
