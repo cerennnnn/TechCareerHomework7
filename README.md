@@ -9,4 +9,7 @@
  - Delegation pattern
  - SQLite DB
  
- ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-03 at 18 32 19](https://user-images.githubusercontent.com/97634053/216647169-f5061be6-0d2c-41ba-b283-fc5fda735bd8.png)
+ 
+[ ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-03 at 18 32 19](https://user-images.githubusercontent.com/97634053/216647169-f5061be6-0d2c-41ba-b283-fc5fda735bd8.png)](https://user-images.githubusercontent.com/97634053/216648679-513e3a0a-1cdc-45a0-a337-407b27b3c93c.mp4
+)
+
